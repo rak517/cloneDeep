@@ -8,4 +8,12 @@ describe("cloneDeep", () => {
     expect(cloneDeep(null)).toBe(null);
     expect(cloneDeep(undefined)).toBe(undefined);
   });
+
+  it("flat Object를 복사해 반환", () => {
+    const obj = { a: 1, b: 2 };
+    const cloned = cloneDeep(obj);
+
+    expect(cloned).toEqual(obj);
+    expect(cloned).not.toBe(obj);
+  });
 });
