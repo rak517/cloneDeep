@@ -24,4 +24,12 @@ describe("cloneDeep", () => {
     expect(cloned.a).not.toBe(obj.a);
     expect(cloned.a.b).not.toBe(obj.a.b);
   });
+
+  it("flat 배열을 복사해 반환", () => {
+    const arr = [1, 2, 3];
+    const cloned = cloneDeep(arr);
+
+    expect(cloned).toEqual(arr);
+    expect(cloned).not.toBe(arr);
+  });
 });
