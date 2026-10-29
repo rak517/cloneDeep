@@ -32,4 +32,12 @@ describe("cloneDeep", () => {
     expect(cloned).toEqual(arr);
     expect(cloned).not.toBe(arr);
   });
+
+  it("중첩 배열을 깊게 복사", () => {
+    const arr = [1, 2, [3, 4]];
+    const cloned = cloneDeep(arr);
+
+    expect(cloned).toEqual(arr);
+    expect(cloned).not.toBe(arr);
+  });
 });
