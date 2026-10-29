@@ -16,4 +16,12 @@ describe("cloneDeep", () => {
     expect(cloned).toEqual(obj);
     expect(cloned).not.toBe(obj);
   });
+
+  it("중첩 객체를 깊게 복사", () => {
+    const obj = { a: { b: { c: 1 } } };
+    const cloned = cloneDeep(obj);
+    expect(cloned).toEqual(obj);
+    expect(cloned.a).not.toBe(obj.a);
+    expect(cloned.a.b).not.toBe(obj.a.b);
+  });
 });
