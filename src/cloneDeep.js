@@ -1,3 +1,3 @@
 export function cloneDeep(value) {
-  if (typeof value !== "object" || null) return value;
+  if (typeof value !== "object" || value === null) return value;
 }
