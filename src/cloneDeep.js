@@ -14,6 +14,15 @@ export function cloneDeep(value) {
     return result;
   }
 
+  if (value instanceof Set) {
+    const result = new Set();
+    for (const v of value) {
+      result.add(cloneDeep(v));
+    }
+
+    return result;
+  }
+
   let result = Array.isArray(value) ? [] : {};
 
   for (const key in value) {

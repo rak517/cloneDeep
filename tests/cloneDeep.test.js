@@ -62,4 +62,13 @@ describe("cloneDeep", () => {
     expect(cloned).not.toBe(map);
     expect(cloned instanceof Map).toBe(true);
   });
+
+  it("Set을 복사", () => {
+    const set = new Set([1, 2, 3]);
+    const cloned = cloneDeep(set);
+
+    expect(cloned).toEqual(set);
+    expect(cloned).not.toBe(set);
+    expect(cloned instanceof Set).toBe(true);
+  });
 });
