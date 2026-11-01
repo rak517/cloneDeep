@@ -39,5 +39,15 @@ describe("cloneDeep", () => {
 
     expect(cloned).toEqual(arr);
     expect(cloned).not.toBe(arr);
+    expect(cloned[2]).not.toBe(arr[2]);
+  });
+
+  it("Date를 복사", () => {
+    const date = new Date("2026-11-11");
+    const cloned = cloneDeep(date);
+
+    expect(cloned).toEqual(date);
+    expect(cloned).not.toBe(date);
+    expect(cloned instanceof Date).toBe(true);
   });
 });
