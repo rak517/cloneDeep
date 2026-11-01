@@ -50,4 +50,16 @@ describe("cloneDeep", () => {
     expect(cloned).not.toBe(date);
     expect(cloned instanceof Date).toBe(true);
   });
+
+  it("Map을 복사", () => {
+    const map = new Map([
+      ["a", 1],
+      ["b", 2],
+    ]);
+    const cloned = cloneDeep(map);
+
+    expect(cloned).toEqual(map);
+    expect(cloned).not.toBe(map);
+    expect(cloned instanceof Map).toBe(true);
+  });
 });
